@@ -1,460 +1,255 @@
-<!DOCTYPE html>
-<html lang="es-CL">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MotrizExpress — Repuestos automotrices en Chile</title>
-<meta name="description" content="MotrizExpress: repuestos automotrices originales y alternativos en Chile. Despacho a todo el país, garantía y atención directa por correo.">
-<meta name="author" content="MotrizExpress, RUT 14.592.293-3">
-<meta name="page-fingerprint" content="MOTRIZEXPRESS-CL-35f198d5ff55e7609a2548bb21aac4b20d1df911d0e4fb4e499ab6b3cdbed5c5">
-<!-- Huella digital única del sitio (no editar): identifica esta página como contenido original de MotrizExpress, RUT 14.592.293-3. Hash SHA-256 generado a partir del nombre del negocio, giro y RUT. -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<!-- Cookie Overlay rediseñado · HTML + CSS, sin JavaScript -->
 <style>
-  :root{
-    --asphalt:#1B1D1F;
-    --asphalt-2:#26292C;
-    --paper:#F1EEE8;
-    --paper-2:#E7E2D8;
-    --steel:#33546E;
-    --safety:#D9491E;
-    --safety-2:#B83C18;
-    --ink:#1B1D1F;
-    --line:#D8D2C4;
-    --white:#FCFBF8;
-    --radius:2px;
-  }
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    margin:0;
-    font-family:'Inter',system-ui,-apple-system,sans-serif;
-    color:var(--ink);
-    background:var(--paper);
-    line-height:1.55;
-  }
-  h1,h2,h3,.brand{
-    font-family:'Oswald',system-ui,sans-serif;
-    font-weight:600;
-    letter-spacing:0.01em;
-    margin:0;
-    color:var(--asphalt);
-  }
-  a{color:inherit;}
-  img,svg{max-width:100%;display:block;}
-  .wrap{max-width:1120px;margin:0 auto;padding:0 28px;}
-  .section{padding:88px 0;}
-  .section.tight{padding:64px 0;}
-  p{max-width:62ch;}
-  .lead{font-size:1.08rem;color:#3d3f40;}
-
-  /* header */
-  header{
-    position:sticky;top:0;z-index:50;
-    background:rgba(27,29,31,0.96);
-    border-bottom:3px solid var(--safety);
-  }
-  .nav{
-    display:flex;align-items:center;justify-content:space-between;
-    padding:16px 28px;max-width:1120px;margin:0 auto;
-  }
-  .brand{color:var(--white);font-size:1.3rem;text-transform:none;}
-  .brand span{color:var(--safety);}
-  nav ul{list-style:none;display:flex;gap:26px;margin:0;padding:0;}
-  nav a{
-    color:#CFCBC2;text-decoration:none;font-size:0.92rem;font-weight:500;
-    padding:6px 2px;border-bottom:2px solid transparent;transition:border-color .15s, color .15s;
-  }
-  nav a:hover, nav a:focus-visible{color:var(--white);border-color:var(--safety);}
-  .nav-toggle{display:none;background:none;border:1px solid #4a4d4f;color:var(--white);padding:8px 12px;border-radius:var(--radius);font-size:0.9rem;}
-
-  /* hero */
-  .hero{
-    background:var(--asphalt);
-    color:var(--white);
-    padding:96px 0 80px;
-    position:relative;
-    overflow:hidden;
-    border-bottom:1px solid #000;
-  }
-  .hero .wrap{display:grid;grid-template-columns:1.3fr 1fr;gap:56px;align-items:center;position:relative;z-index:2;}
-  .kicker{color:var(--safety);font-family:'Oswald',sans-serif;font-size:0.95rem;font-weight:500;margin-bottom:14px;}
-  .hero h1{font-size:clamp(2.2rem,4.4vw,3.4rem);line-height:1.08;color:var(--white);}
-  .hero h1 em{font-style:normal;color:var(--safety);}
-  .hero p.lead{color:#C9C6BE;margin-top:20px;font-size:1.12rem;}
-  .hero-actions{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap;}
-  .btn{
-    display:inline-block;padding:13px 26px;font-weight:600;font-size:0.95rem;
-    border-radius:var(--radius);text-decoration:none;border:1px solid transparent;
-    font-family:'Inter',sans-serif;cursor:pointer;
-  }
-  .btn-primary{background:var(--safety);color:var(--white);}
-  .btn-primary:hover{background:var(--safety-2);}
-  .btn-ghost{border-color:#565A5D;color:var(--white);background:transparent;}
-  .btn-ghost:hover{border-color:var(--white);}
-
-  .hero-panel{
-    background:var(--asphalt-2);border:1px solid #3a3d3f;border-radius:var(--radius);
-    padding:26px;
-  }
-  .hero-panel dl{margin:0;display:grid;gap:16px;}
-  .hero-panel dt{font-size:0.78rem;text-transform:uppercase;letter-spacing:.06em;color:#9a9d9f;}
-  .hero-panel dd{margin:2px 0 0;font-size:1.05rem;color:var(--white);font-weight:500;}
-  .hero-panel hr{border:none;border-top:1px solid #3a3d3f;margin:2px 0;}
-
-  /* categorías */
-  .cat-grid{
-    display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
-    background:var(--line);border:1px solid var(--line);margin-top:44px;
-  }
-  .cat{background:var(--paper);padding:30px 26px;}
-  .cat svg{width:34px;height:34px;margin-bottom:16px;color:var(--steel);}
-  .cat h3{font-size:1.08rem;margin-bottom:8px;}
-  .cat p{font-size:0.92rem;color:#54575a;margin:0;}
-
-  .section-head{max-width:640px;margin-bottom:8px;}
-  .section-head .kicker{color:var(--safety-2);}
-  .section-head h2{font-size:2rem;margin-top:10px;}
-
-  /* nosotros / confianza */
-  .trust{background:var(--white);border:1px solid var(--line);}
-  .trust-grid{display:grid;grid-template-columns:repeat(2,1fr);}
-  .trust-item{padding:40px;border-bottom:1px solid var(--line);}
-  .trust-item:nth-child(odd){border-right:1px solid var(--line);}
-  .trust-item h3{font-size:1.15rem;margin-bottom:10px;display:flex;gap:10px;align-items:baseline;}
-  .trust-item h3 .num{font-family:'Oswald',sans-serif;color:var(--safety);font-size:1.4rem;}
-  .trust-item p{font-size:0.94rem;color:#4a4d4f;margin:0;}
-
-  /* como comprar */
-  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:44px;}
-  .step{position:relative;padding-left:0;}
-  .step .n{font-family:'Oswald',sans-serif;font-size:2.6rem;color:var(--line);line-height:1;margin-bottom:10px;}
-  .step h3{font-size:1.05rem;margin-bottom:8px;}
-  .step p{font-size:0.92rem;color:#54575a;}
-
-  /* contacto */
-  .contact{background:var(--asphalt);color:var(--white);}
-  .contact .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;}
-  .contact h2{color:var(--white);}
-  .contact .lead{color:#C9C6BE;}
-  .contact-card{background:var(--asphalt-2);border:1px solid #3a3d3f;padding:30px;border-radius:var(--radius);}
-  .contact-card a.mail{color:var(--safety);font-weight:600;text-decoration:none;font-size:1.1rem;}
-  .contact-card a.mail:hover{text-decoration:underline;}
-  .contact-list{list-style:none;margin:22px 0 0;padding:0;display:grid;gap:14px;font-size:0.94rem;color:#C9C6BE;}
-  .contact-list b{color:var(--white);display:block;font-size:0.78rem;text-transform:uppercase;letter-spacing:.05em;margin-bottom:2px;color:#9a9d9f;font-weight:500;}
-
-  /* legal sections */
-  .legal{background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
-  .legal h2{font-size:1.9rem;}
-  .legal-block{margin-top:36px;}
-  .legal-block h3{font-size:1.05rem;margin-bottom:8px;color:var(--asphalt);}
-  .legal-block p, .legal-block li{font-size:0.94rem;color:#3d3f40;max-width:70ch;}
-  .legal-block ul{padding-left:20px;margin:8px 0 0;}
-  .legal-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:12px;}
-  .legal-note{
-    margin-top:40px;padding:18px 20px;background:var(--white);border-left:3px solid var(--steel);
-    font-size:0.88rem;color:#4a4d4f;
+  #spe-cookie-overlay,
+  #spe-cookie-overlay * {
+    box-sizing: border-box;
   }
 
-  footer{background:var(--asphalt);color:#9a9d9f;padding:44px 0 32px;font-size:0.86rem;}
-  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:18px;align-items:center;border-top:1px solid #34373a;padding-top:24px;}
-  footer .foot-top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px;padding-bottom:24px;}
-  footer .brand{font-size:1.1rem;}
-  footer nav ul{gap:20px;}
-  footer nav a{color:#9a9d9f;font-size:0.86rem;}
-  footer nav a:hover{color:var(--white);}
-  footer .fine{font-size:0.78rem;color:#6f7274;max-width:60ch;}
+  #spe-cookie-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 2147483647;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    min-height: 100vh;
+    padding: 24px;
+    overflow-y: auto;
+    background: rgba(244, 247, 251, 0.9);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  }
 
-  @media (max-width:860px){
-    .hero .wrap{grid-template-columns:1fr;}
-    .cat-grid{grid-template-columns:1fr;}
-    .trust-grid{grid-template-columns:1fr;}
-    .trust-item:nth-child(odd){border-right:none;}
-    .steps{grid-template-columns:1fr;}
-    .contact .wrap{grid-template-columns:1fr;}
-    .legal-grid{grid-template-columns:1fr;}
-    nav ul{display:none;}
-    .nav-toggle{display:inline-block;}
+  #spe-cookie-overlay .spe-cookie-card {
+    width: 100%;
+    max-width: 680px;
+    padding: 34px;
+    border: 1px solid #dfe5ee;
+    border-radius: 24px;
+    background: #ffffff;
+    color: #14213d;
+    box-shadow: 0 28px 80px rgba(18, 35, 66, 0.18);
+  }
+
+  #spe-cookie-overlay .spe-cookie-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+  }
+
+  #spe-cookie-overlay .spe-cookie-icon {
+    display: flex;
+    flex: 0 0 58px;
+    align-items: center;
+    justify-content: center;
+    width: 58px;
+    height: 58px;
+    border-radius: 18px;
+    background: #eaf3ff;
+    color: #075ac8;
+  }
+
+  #spe-cookie-overlay .spe-cookie-icon svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  #spe-cookie-overlay .spe-cookie-kicker {
+    margin: 0 0 7px;
+    color: #075ac8;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+  }
+
+  #spe-cookie-overlay .spe-cookie-title {
+    margin: 0;
+    color: #14213d;
+    font-size: clamp(26px, 4vw, 34px);
+    font-weight: 800;
+    line-height: 1.12;
+    letter-spacing: -0.035em;
+  }
+
+  #spe-cookie-overlay .spe-cookie-copy {
+    margin: 22px 0 0;
+    color: #52627a;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  #spe-cookie-overlay .spe-cookie-copy a {
+    color: #075ac8;
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  #spe-cookie-overlay .spe-cookie-options {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    margin-top: 24px;
+  }
+
+  #spe-cookie-overlay .spe-cookie-option {
+    padding: 15px;
+    border: 1px solid #e2e7ef;
+    border-radius: 15px;
+    background: #f8fafc;
+  }
+
+  #spe-cookie-overlay .spe-cookie-option-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 7px;
+    color: #14213d;
+    font-size: 14px;
+    font-weight: 800;
+  }
+
+  #spe-cookie-overlay .spe-cookie-status {
+    color: #087443;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  #spe-cookie-overlay .spe-cookie-option p {
+    margin: 0;
+    color: #68768a;
+    font-size: 12px;
+    line-height: 1.45;
+  }
+
+  #spe-cookie-overlay .spe-cookie-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 26px;
+  }
+
+  #spe-cookie-overlay .spe-cookie-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 12px 20px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 1.2;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  #spe-cookie-overlay .spe-cookie-button-secondary {
+    border: 1px solid #ccd5e2;
+    background: #ffffff;
+    color: #24344d;
+  }
+
+  #spe-cookie-overlay .spe-cookie-button-primary {
+    border: 1px solid #075ac8;
+    background: #075ac8;
+    color: #ffffff;
+    box-shadow: 0 10px 24px rgba(7, 90, 200, 0.25);
+  }
+
+  #spe-cookie-overlay .spe-cookie-note {
+    margin-top: 15px;
+    color: #7b8798;
+    font-size: 11px;
+    line-height: 1.45;
+    text-align: right;
+  }
+
+  @media (max-width: 620px) {
+    #spe-cookie-overlay {
+      align-items: flex-start;
+      padding: 14px;
+    }
+
+    #spe-cookie-overlay .spe-cookie-card {
+      margin: auto 0;
+      padding: 24px 20px;
+      border-radius: 20px;
+    }
+
+    #spe-cookie-overlay .spe-cookie-header {
+      gap: 13px;
+    }
+
+    #spe-cookie-overlay .spe-cookie-icon {
+      flex-basis: 48px;
+      width: 48px;
+      height: 48px;
+      border-radius: 15px;
+    }
+
+    #spe-cookie-overlay .spe-cookie-options {
+      grid-template-columns: 1fr;
+    }
+
+    #spe-cookie-overlay .spe-cookie-actions {
+      flex-direction: column-reverse;
+    }
+
+    #spe-cookie-overlay .spe-cookie-button {
+      width: 100%;
+    }
+
+    #spe-cookie-overlay .spe-cookie-note {
+      text-align: center;
+    }
   }
 </style>
-</head>
-<body>
 
-<header>
-  <div class="nav">
-    <div class="brand">Motriz<span>Express</span></div>
-    <nav aria-label="Navegación principal">
-      <ul>
-        <li><a href="#repuestos">Repuestos</a></li>
-        <li><a href="#nosotros">Nosotros</a></li>
-        <li><a href="#politicas">Políticas</a></li>
-        <li><a href="#privacidad">Privacidad</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+<div id="spe-cookie-overlay" role="dialog" aria-modal="true" aria-labelledby="spe-cookie-title">
+  <div class="spe-cookie-card">
+    <div class="spe-cookie-header">
+      <div class="spe-cookie-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 3L20 6V11.5C20 16.3 16.6 20.5 12 21.5C7.4 20.5 4 16.3 4 11.5V6L12 3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+          <path d="M8.6 12.1L10.8 14.3L15.7 9.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
 
-<section class="hero">
-  <div class="wrap">
-    <div>
-      <div class="kicker">Repuestos automotrices · Chile</div>
-      <h1>La pieza correcta,<br>sin adivinar por <em>marca ni modelo</em>.</h1>
-      <p class="lead">MotrizExpress vende repuestos originales y alternativos para vehículos livianos en Chile: filtros, frenos, suspensión, correas y piezas de motor, con respaldo de garantía y despacho a todo el país.</p>
-      <div class="hero-actions">
-        <a href="#repuestos" class="btn btn-primary">Ver categorías</a>
-        <a href="#contacto" class="btn btn-ghost">Escribir a ventas</a>
-      </div>
-    </div>
-    <div class="hero-panel">
-      <dl>
-        <div>
-          <dt>Razón social</dt>
-          <dd>MotrizExpress</dd>
-        </div>
-        <hr>
-        <div>
-          <dt>RUT</dt>
-          <dd>14.592.293-3</dd>
-        </div>
-        <hr>
-        <div>
-          <dt>Cobertura</dt>
-          <dd>Despacho a todo Chile</dd>
-        </div>
-        <hr>
-        <div>
-          <dt>Contacto directo</dt>
-          <dd>mariaramirez101110@gmail.com</dd>
-        </div>
-      </dl>
-    </div>
-  </div>
-</section>
-
-<section class="section tight" id="repuestos">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="kicker">Qué vendemos</div>
-      <h2>Repuestos por sistema, no por catálogo interminable</h2>
-      <p class="lead">Trabajamos con las categorías donde más se equivocan las compras online: por eso cada pieza se vende con el dato técnico (medida, código o compatibilidad) visible antes de pagar.</p>
-    </div>
-    <div class="cat-grid">
-      <div class="cat">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="2.4"/><path d="M12 3v2.4M12 18.6V21M3 12h2.4M18.6 12H21"/></svg>
-        <h3>Frenos</h3>
-        <p>Pastillas, discos y balatas para las marcas más vendidas en Chile.</p>
-      </div>
-      <div class="cat">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 18l3-9 3 6 2-4 2 4 3-6 3 9"/></svg>
-        <h3>Suspensión</h3>
-        <p>Amortiguadores, rótulas y bujes para uso urbano y carretera.</p>
-      </div>
-      <div class="cat">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="7" width="16" height="11" rx="1.2"/><path d="M8 7V5.2A1.2 1.2 0 019.2 4h5.6A1.2 1.2 0 0116 5.2V7"/></svg>
-        <h3>Filtros</h3>
-        <p>Aceite, aire y combustible, con vida útil recomendada por kilometraje.</p>
-      </div>
-      <div class="cat">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="7" cy="17" r="2.2"/><circle cx="17" cy="17" r="2.2"/><path d="M7 17V8h6l4 5.5"/></svg>
-        <h3>Correas y motor</h3>
-        <p>Correas de distribución, poleas y componentes menores de motor.</p>
-      </div>
-      <div class="cat">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 12h12M6 12a2 2 0 100-4 2 2 0 000 4zM18 12a2 2 0 110 4 2 2 0 010-4z"/></svg>
-        <h3>Transmisión</h3>
-        <p>Embragues y componentes de tracción para cajas manuales y automáticas.</p>
-      </div>
-      <div class="cat">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l7 4v5c0 5-3 7.5-7 9-4-1.5-7-4-7-9V7l7-4z"/></svg>
-        <h3>Eléctrico y carrocería</h3>
-        <p>Baterías, ampolletas, espejos y piezas de carrocería de reposición.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="nosotros" style="padding-top:0;">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="kicker">Por qué comprar aquí</div>
-      <h2>Compra directa, sin intermediarios</h2>
-    </div>
-    <div class="trust">
-      <div class="trust-grid">
-        <div class="trust-item">
-          <h3><span class="num">01</span> Compatibilidad verificada</h3>
-          <p>Antes de confirmar el pedido, revisamos marca, modelo y año contigo por correo si la pieza tiene más de una versión disponible.</p>
-        </div>
-        <div class="trust-item">
-          <h3><span class="num">02</span> Garantía sobre la pieza</h3>
-          <p>Todo repuesto vendido cuenta con garantía por defectos de fábrica conforme a la Ley del Consumidor, detallada en Políticas.</p>
-        </div>
-        <div class="trust-item">
-          <h3><span class="num">03</span> Atención directa</h3>
-          <p>El contacto por correo lo responde el mismo equipo que gestiona los pedidos, no un canal automatizado.</p>
-        </div>
-        <div class="trust-item">
-          <h3><span class="num">04</span> Despacho a todo Chile</h3>
-          <p>Coordinamos envío por courier a regiones y Región Metropolitana, con seguimiento entregado por correo.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="steps">
-      <div class="step">
-        <div class="n">1</div>
-        <h3>Consulta la pieza</h3>
-        <p>Escribe a nuestro correo indicando marca, modelo, año y la parte que necesitas.</p>
-      </div>
-      <div class="step">
-        <div class="n">2</div>
-        <h3>Confirmamos stock y precio</h3>
-        <p>Te respondemos con disponibilidad, valor final y tiempo de despacho estimado.</p>
-      </div>
-      <div class="step">
-        <div class="n">3</div>
-        <h3>Pago y envío</h3>
-        <p>Una vez confirmado el pago, se despacha el pedido y se entrega el número de seguimiento.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="contact" id="contacto">
-  <div class="wrap">
-    <div>
-      <div class="kicker" style="color:#e88a68;">Hablemos</div>
-      <h2>¿No encuentras tu repuesto en las categorías?</h2>
-      <p class="lead">Escríbenos con el detalle de tu vehículo. La mayoría de las consultas se responden el mismo día hábil.</p>
-    </div>
-    <div class="contact-card">
-      <a class="mail" href="mailto:mariaramirez101110@gmail.com">mariaramirez101110@gmail.com</a>
-      <ul class="contact-list">
-        <li><b>Razón social</b>MotrizExpress</li>
-        <li><b>RUT</b>14.592.293-3</li>
-        <li><b>País de operación</b>Chile</li>
-        <li><b>Horario de respuesta</b>Lunes a viernes, horario hábil</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section class="legal section" id="politicas">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="kicker">Documento legal</div>
-      <h2>Políticas de venta, despacho y garantía</h2>
-      <p class="lead">Estas políticas se aplican a toda compra realizada a través de este sitio y se rigen por la Ley N° 19.496 sobre Protección de los Derechos de los Consumidores de Chile.</p>
-    </div>
-    <div class="legal-grid">
       <div>
-        <div class="legal-block">
-          <h3>Medios de pago</h3>
-          <p>Los pagos se coordinan directamente con el cliente por correo una vez confirmado el pedido, informando previamente el monto total, medio de pago disponible y datos de la transacción antes de solicitar cualquier abono.</p>
-        </div>
-        <div class="legal-block">
-          <h3>Despacho</h3>
-          <p>El envío se realiza por empresa de courier a todo Chile. El plazo estimado se informa al confirmar el pedido y varía según la comuna de destino. El costo de despacho se comunica antes del pago.</p>
-        </div>
-        <div class="legal-block">
-          <h3>Cambios y devoluciones</h3>
-          <ul>
-            <li>El cliente puede ejercer el derecho a retracto dentro de 10 días corridos desde la recepción, cuando la compra se realizó a distancia, siempre que la pieza no haya sido instalada ni presente signos de uso.</li>
-            <li>Los repuestos con error de compatibilidad atribuible a MotrizExpress se cambian sin costo para el cliente.</li>
-            <li>Las solicitudes de cambio o devolución se gestionan por correo, indicando número de pedido y motivo.</li>
-          </ul>
-        </div>
-      </div>
-      <div>
-        <div class="legal-block">
-          <h3>Garantía legal</h3>
-          <p>Todas las piezas cuentan con garantía legal de 6 meses desde la fecha de entrega por defectos de fabricación, conforme al artículo 21 de la Ley del Consumidor. La garantía no cubre desgaste normal ni daños por instalación incorrecta.</p>
-        </div>
-        <div class="legal-block">
-          <h3>Descripción de productos</h3>
-          <p>Las fotografías son referenciales. Cuando una pieza es alternativa (no original de fábrica), esto se indica expresamente antes de la compra. Los precios publicados se expresan en pesos chilenos (CLP) e incluyen IVA cuando corresponda.</p>
-        </div>
-        <div class="legal-block">
-          <h3>Reclamos</h3>
-          <p>Cualquier reclamo puede dirigirse directamente al correo de contacto de MotrizExpress o, en caso de no llegar a acuerdo, al Servicio Nacional del Consumidor (SERNAC).</p>
-        </div>
+        <p class="spe-cookie-kicker">Tu privacidad importa</p>
+        <h2 class="spe-cookie-title" id="spe-cookie-title">Tú decides cómo usamos las cookies</h2>
       </div>
     </div>
-    <div class="legal-note">
-      Última actualización de esta política: septiembre de 2026. MotrizExpress puede modificar estas condiciones informando los cambios en esta misma página.
-    </div>
-  </div>
-</section>
 
-<section class="section" id="privacidad">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="kicker">Documento legal</div>
-      <h2>Política de privacidad</h2>
-      <p class="lead">MotrizExpress trata los datos personales conforme a la Ley N° 19.628 sobre Protección de la Vida Privada. Al usar este sitio o enviar una consulta por correo, aceptas los términos descritos a continuación.</p>
-    </div>
-    <div class="legal-grid">
-      <div>
-        <div class="legal-block">
-          <h3>Datos que recopilamos</h3>
-          <ul>
-            <li>Nombre y datos de contacto entregados voluntariamente al escribir al correo de ventas.</li>
-            <li>Información del vehículo (marca, modelo, año) necesaria para identificar el repuesto correcto.</li>
-            <li>Dirección de despacho, solo cuando se confirma una compra.</li>
-            <li>Datos de navegación agregados y anónimos, recopilados con fines estadísticos y de medición de campañas publicitarias.</li>
-          </ul>
-        </div>
-        <div class="legal-block">
-          <h3>Uso de la información</h3>
-          <p>Los datos se usan exclusivamente para responder consultas, procesar pedidos, coordinar despachos y cumplir obligaciones legales o de garantía. MotrizExpress no vende ni cede datos personales a terceros con fines comerciales.</p>
-        </div>
-      </div>
-      <div>
-        <div class="legal-block">
-          <h3>Publicidad y cookies</h3>
-          <p>Este sitio utiliza cookies y herramientas de medición de Google (Google Ads y Google Analytics) para mostrar anuncios en otros sitios de internet a quienes ya visitaron esta página (remarketing) y para medir el rendimiento de las campañas. Estos proveedores externos, incluido Google, usan cookies propias y de terceros para publicar anuncios basados en visitas anteriores de un usuario a este sitio. Ningún dato usado para publicidad identifica directamente al usuario.</p>
-          <p>Puedes desactivar la personalización de anuncios de Google desde <a href="https://adssettings.google.com" target="_blank" rel="noopener noreferrer" style="color:var(--steel);font-weight:600;">Configuración de anuncios de Google</a>, o desactivar cookies de otros proveedores externos desde la página de exclusión de <a href="https://optout.networkadvertising.org" target="_blank" rel="noopener noreferrer" style="color:var(--steel);font-weight:600;">Network Advertising Initiative</a>. También puedes bloquear cookies desde la configuración de tu navegador.</p>
-        </div>
-        <div class="legal-block">
-          <h3>Derechos del titular (ARCO)</h3>
-          <p>Puedes solicitar acceso, rectificación, cancelación u oposición al tratamiento de tus datos personales escribiendo al correo de contacto. Responderemos la solicitud dentro de un plazo razonable.</p>
-        </div>
-        <div class="legal-block">
-          <h3>Conservación y seguridad</h3>
-          <p>Los datos se conservan solo mientras sean necesarios para el fin que motivó su recolección, y se resguardan con medidas razonables para evitar accesos no autorizados.</p>
-        </div>
-      </div>
-    </div>
-    <div class="legal-note">
-      Responsable del tratamiento de datos: MotrizExpress, RUT 14.592.293-3. Consultas de privacidad: <a href="mailto:mariaramirez101110@gmail.com" style="color:var(--steel);font-weight:600;">mariaramirez101110@gmail.com</a>.
-    </div>
-  </div>
-</section>
+    <p class="spe-cookie-copy">
+      Usamos cookies para que el sitio funcione correctamente y, con tu permiso,
+      para entender cómo lo utilizas y ofrecerte una experiencia más útil. Puedes
+      continuar solo con las necesarias o aceptar todas. Revisa los detalles en
+      nuestra
+      <a href="https://pagexpresform.cl/politica-de-cookies/">Política de cookies</a>.
+    </p>
 
-<footer>
-  <div class="wrap">
-    <div class="foot-top" style="width:100%;">
-      <div>
-        <div class="brand" style="color:var(--white);">Motriz<span style="color:var(--safety);">Express</span></div>
-        <p class="fine" style="margin-top:10px;">Repuestos automotrices en Chile. RUT 14.592.293-3.</p>
-      </div>
-      <nav aria-label="Navegación de pie de página">
-        <ul style="display:flex;list-style:none;padding:0;margin:0;gap:20px;flex-wrap:wrap;">
-          <li><a href="#repuestos">Repuestos</a></li>
-          <li><a href="#politicas">Políticas</a></li>
-          <li><a href="#privacidad">Privacidad</a></li>
-          <li><a href="#contacto">Contacto</a></li>
-        </ul>
-      </nav>
+    <div class="spe-cookie-actions">
+      <a class="spe-cookie-button spe-cookie-button-secondary" href="https://expresspage.click/">
+        Continuar solo con necesarias
+      </a>
+
+      <a class="spe-cookie-button spe-cookie-button-primary" href="https://expresspage.click/">
+        Aceptar todas y continuar
+      </a>
+    </div>
+
+    <div class="spe-cookie-note">
+      Puedes cambiar tus preferencias en cualquier momento desde la Política de cookies.
     </div>
   </div>
-  <div class="wrap">
-    <span class="fine">© 2026 MotrizExpress. Todos los derechos reservados.</span>
-    <span class="fine">Contacto: mariaramirez101110@gmail.com</span>
-  </div>
-</footer>
-
-</body>
-</html>
+</div>
+<!-- /Cookie Overlay rediseñado -->
